@@ -26,19 +26,11 @@ $(NAME):	$(OBJ)
 clean:
 	rm -f $(OBJ)
 	rm -f *~
-	make clean -C tests
 
 fclean: clean
 	make fclean -C lib/my/
 	rm -f $(NAME)
 
 re: fclean	all
-
-unit_tests:
-	make clean -C tests
-	make -C tests
-
-tests_run:
-	make run_tests -C tests
 
 .PHONY: clean fclean re
